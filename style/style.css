@@ -6,12 +6,21 @@ body {
 #app{
     height: 100vh;
 }
+form{
+    height: 20vh;
 
+}
 ul{
     list-style: none;
     padding: 0;
+    height: 80vh;
+    overflow-y: auto;
 }
 
 li{
     border-bottom: 1px solid grey;
 }
+
+.completed div{
+    text-decoration: line-through;
+}  

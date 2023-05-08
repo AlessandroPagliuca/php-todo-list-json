@@ -36,6 +36,25 @@ createApp({
             
         },
 
+        toggleTask(index) {
+    
+            this.tasks[index].completed = !this.tasks[index].completed;
+        
+        },
+
+        deleteTask(index) {
+            // Rimuove il task dalla lista di attività utilizzando l'indice
+            this.tasks.splice(index, 1);
+        
+            // Effettua la richiesta DELETE al server per rimuovere il task
+            axios.delete('server.php', { data: { index: index }})
+                .then(res => {
+                    console.log(res.data);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        },
         loadTasks() {
             axios.get('tasks.json')
             .then(res => {

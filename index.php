@@ -20,14 +20,18 @@
     <div id="app" class="container-fluid d-flex flex-column justify-content-center align-items-center">
 
         <form @submit.prevent="addTask">
-            <input type="text" placeholder="Add new task" v-model="newTask">
-            <input type="submit" value="Add" class=" btn btn-outline-light">
+
+            <div class="d-flex align-items-center">
+                <input type="text" placeholder="Add new task" v-model="newTask" class="m-2">
+                <button class="btn btn-warning m-2">Add new task</button>
+            </div>
+            
         </form>
 
-        <ul class="card w-50">
-            <li v-for="(task, index) in tasks" :key="index" class="d-flex justify-content-between align-items-center fw-semibold">
+        <ul class="card w-50 mt-5">
+            <li v-for="(task, index) in tasks" :key="index" class="d-flex justify-content-between align-items-center fw-semibold" :class="{ completed: task.completed }" @click="toggleTask(index)">
                <div class="m-2">{{ task.task }}</div>
-               <button class="btn btn-warning m-2">Delete</button>
+               <button class="btn btn-danger m-2" @click="deleteTask(index)">Delete</button>
             </li>
         </ul>
     </div>
