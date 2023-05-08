@@ -18,7 +18,11 @@ createApp({
                 console.log(this.newTask);
 
                 // Effettua la richiesta POST al server per aggiungere il nuovo task
-            axios.post('server.php', { task: this.newTask })
+            axios.post('server.php', { task: this.newTask }, {
+               
+                headers:{'Content-Type': 'multipart/form-data'},
+
+            })
             .then(res => {
             // Aggiunge il nuovo task alla lista di attività
             this.tasks = res.data;
