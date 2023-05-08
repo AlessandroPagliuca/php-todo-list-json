@@ -18,4 +18,6 @@ $json_string = json_encode($tasks);
 file_put_contents('tasks.json', $json_string );
 
 // Ritorna il nuovo task come risposta alla richiesta POST
+
+//header('Content-Type: application/json');
 echo json_encode($tasks);
