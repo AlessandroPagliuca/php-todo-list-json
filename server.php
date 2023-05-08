@@ -5,9 +5,10 @@ $tasks = json_decode(file_get_contents('tasks.json'), true);
 
 // Aggiungi il nuovo task alla lista
 $newTask = array(
-  'task' => $_POST['task'],
-  'completed' => false
-);
+    'task' => $_POST['task'],
+    'completed' => false
+  );
+  
 array_push($tasks, $newTask);
 
 // Salva la lista di attività aggiornata nel file JSON
