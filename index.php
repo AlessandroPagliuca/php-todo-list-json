@@ -10,22 +10,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>PHP ToDo List JSON</title>
 </head>
 <body>
 
-    <div id="app">
+    <div id="app" class="container-fluid d-flex flex-column justify-content-center align-items-center">
 
         <form @submit.prevent="addTask">
             <input type="text" placeholder="Add new task" v-model="newTask">
-            <input type="submit" value="Add" class=" btn btn-outline-dark">
+            <input type="submit" value="Add" class=" btn btn-outline-light">
         </form>
 
-        <ul>
-            <li v-for="(task, index) in tasks" :key="index">
-                {{ task.task }}
+        <ul class="card w-50">
+            <li v-for="(task, index) in tasks" :key="index" class="d-flex justify-content-between align-items-center fw-semibold">
+               <div class="m-2">{{ task.task }}</div>
+               <button class="btn btn-warning m-2">Delete</button>
             </li>
         </ul>
     </div>

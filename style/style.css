@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(23, 23, 100);
+    color: white;
+}
+
+#app{
+    height: 100vh;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    border-bottom: 1px solid grey;
+}
