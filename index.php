@@ -15,8 +15,20 @@
     <title>PHP ToDo List JSON</title>
 </head>
 <body>
-    
-    <div id="app"></div>
+
+    <div id="app">
+
+        <form @submit.prevent="addTask">
+            <input type="text" placeholder="Add new task" v-model="newTask">
+            <input type="submit" value="Add" class=" btn btn-outline-dark">
+        </form>
+
+        <ul>
+            <li v-for="(task, index) in tasks" :key="index">
+                {{ task.task }}
+            </li>
+        </ul>
+    </div>
 
     <script src="./js/script.js"></script>
 </body>
