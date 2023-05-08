@@ -21,7 +21,7 @@ createApp({
             axios.post('server.php', { task: this.newTask })
             .then(res => {
             // Aggiunge il nuovo task alla lista di attività
-            this.task = res.data;
+            this.tasks = res.data;
             // Resetta il campo di input
             this.newTask = '';
             })
